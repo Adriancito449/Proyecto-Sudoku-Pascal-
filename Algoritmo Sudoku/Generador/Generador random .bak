@@ -12,7 +12,7 @@ Begin
 		writeln();
 		for columna:=1 to 9 do
 		Begin
-			Sudoki[Fila,columna]:= Random(8)+1;
+			Sudoki[Fila,columna]:= Sudoki[Fila,columna] + Random(9);
 			write(Sudoki[Fila,columna]);
 
 		End;
@@ -22,17 +22,17 @@ Begin
 
 
 Var
-Sudoki: array [1..9,1..9] of integer;
+Sudoki: array [9,9] of integer
 Begin
 
 
 
 
-	Gener(Sudoki[9,9]);
+	Gener(Sudoki);
 	readln()
 
 
-End.
+	End.
 
 
 
