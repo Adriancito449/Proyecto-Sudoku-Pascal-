@@ -3,22 +3,45 @@ Program Generador_Randon;
 Function Gener(Sudoki:array of integer ):integer;
 
 Var
-	Fila: integer;
-	columna: integer;
-Begin
 
-	for Fila:= 1 to 9 do
-	Begin
-		writeln();
-		for columna:=1 to 9 do
-		Begin
-			Sudoki[Fila,columna]:= Random(8)+1;
-			write(Sudoki[Fila,columna]);
+Fila: integer;
+columna: integer;
+	
+begin
 
-		End;
-	End;
+	for Fila :=1 to 9 do
+	begin
 
-	End;
+		writeln(' ');
+
+		for columna := 1 to 9 do
+		begin
+			Sudoki[Fila,columna]:= random(8)+1;
+			write(arreglo[Fila,columna]);
+			if columna = 3 then
+			begin
+				write(' ');
+			end;
+
+			if columna = 6 then
+			begin
+				write(' ');
+			end;
+		end;
+
+		if Fila = 3 then
+		begin
+			writeln(' ');
+		end;
+
+		if Fila = 6 then
+		begin
+			writeln(' ');
+		end;
+	end;
+
+end;
+
 
 
 Var
