@@ -95,26 +95,27 @@ begin
 	end;
 end;
 
-Function opciones (juego_iniciado:boolean):boolean;
+function las_opciones(opcion:integer):integer; // Esta va a ser la funcion para jugar//
 
-Var
-opcion: string;
 begin
-	
-	
-	case ( opcion) of
-	'1': write('has escogido la opcion 1');
-	'2': write('has escogido la opcion 1');
-	'3': write('has escogido la opcion 1');
-	else
-	write('no has es niguna opcion');
-	Clrscr;
+    
+    case opcion of
+
+    	1: write('has escogido la opcion 1');
+		2: write('has escogido la opcion 1');
+		3: write('has escogido la opcion 1');
+
+    else 
+        writeln('Dia no valido');
+    end;
 end;
+
 
 procedure juego; // uso la sudproceso para la parte de interfaz //
 	
 Var
 f,k,n: integer;
+opcion: integer;
 
 begin
 	writeln(' ');
@@ -131,13 +132,18 @@ begin
 		writeln('El numero escogido es "',f,'" Presiona 1 si no 2');
 		readln(n)
 	until (n=1);
-end;
 
+	write('Dime el numero de opcion de juego: ');
+	write('1: para añadir dato');
+	write('2: para borrar dato');
+	write('3: para para modo pista');
+    readln(opcion);
+    las_opciones(opcion);
+end;
 
 Begin
 	juego_iniciado:= true;
 	Gener(sudoku);
 	juego();
-	opcion(juego_iniciado);
 	readln()
 End.
