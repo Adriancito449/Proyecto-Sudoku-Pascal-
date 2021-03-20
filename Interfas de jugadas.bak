@@ -9,7 +9,7 @@ Sudoki = array [1..9,1..9] of integer;
 // Uso una Etiqueta para que se haga mas Facil llamar a una funcion //
 
 Var
-sudoku, sudoka: Sudoki; // De la funcion Gener//
+sudoku: Sudoki; // De la funcion Gener//
 juego_iniciado: boolean;
 revelador: array [1..9,1..9] of boolean;
 i,j: integer;
@@ -105,6 +105,8 @@ begin
     readln(opcion);
     las_opciones(opcion);
 end;
+Var
+sudoka: Sudoki;
 
 Begin
 
@@ -270,14 +272,21 @@ revelador[2,4]:= true;
 		begin
 			
 			write(' ');
-			if not revelador[i,j] = true then
-			begin
-			write(0);
-			end;
-			
 			if revelador[i,j] = true then
-			begin
-			write sudoka[i,j];
+			begin 
+
+			write (sudoka[i,j]);
+
+
+			end;
+
+			if not revelador[i,j] = true then
+
+			begin 
+
+			write (0);
+
+
 			end;
 			
 
